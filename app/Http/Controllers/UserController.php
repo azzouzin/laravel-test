@@ -29,11 +29,11 @@ class UserController extends Controller
 
         if (Hash::check($request->password, $user->password)) {
             // Creating a token without scopes...
-            $token = $user->createToken('Token Name')->accessToken;
+            $token = $user->createToken("auth_token");
 
             return response()->json([
                 'user' => $user,
-                'token' => $token,
+                'token' => $token->plainTextToken,
             ], 200);
         } else {
             return response()->json(['message' => 'Invalid credentials'], 401);

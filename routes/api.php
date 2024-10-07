@@ -12,7 +12,7 @@ Route::get('/user', function (Request $request) {
 
 Route::post('/createUser', UserController::class . '@createUser');
 
-Route::post('/createArtical', ArticelController::class . '@createArtical');
+Route::post('/createArtical', ArticelController::class . '@createArtical')->middleware('auth:sanctum');
 
 Route::get('/getArticlas', ArticelController::class . '@getArticlas');
 
@@ -25,5 +25,3 @@ Route::put('/updateArticlas/{id}', ArticelController::class . '@updateArticlas')
 Route::post('/register', UserController::class . '@register');
 
 Route::post('/login', UserController::class . '@login');
-
-

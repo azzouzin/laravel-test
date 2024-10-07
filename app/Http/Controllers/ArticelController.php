@@ -13,7 +13,7 @@ class ArticelController extends Controller
     function createArtical(Request $request)
     {
         $artical = Artical::create($request->all());
-        return request()->all();
+        return $artical;
     }
 
     function getArticlas()
@@ -23,7 +23,7 @@ class ArticelController extends Controller
 
     function getArticle($id)
     {
-        return Artical::find($id);
+        return response()->json(Artical::find($id));
     }
 
     function deleteArticlas($id)
