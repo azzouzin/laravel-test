@@ -15,10 +15,5 @@ class ArticalSeeder extends Seeder
     public function run(): void
     {
         Artical::factory(100)->create();
-
-        Artical::factory()->create([
-            'title' => 'titel test',
-            'content' => 'content abcd',
-        ]);
     }
 }

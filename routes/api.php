@@ -12,16 +12,22 @@ Route::get('/user', function (Request $request) {
 
 Route::post('/createUser', UserController::class . '@createUser');
 
-Route::post('/createArtical', ArticelController::class . '@createArtical')->middleware('auth:sanctum');
+Route::post('/createArtical/{id}', ArticelController::class . '@createArtical')->middleware('auth:sanctum');
 
 Route::get('/getArticlas', ArticelController::class . '@getArticlas');
+
+Route::get('/UserArticals/{id}', ArticelController::class . '@getUserArticals');
 
 Route::get('/getArticlas/{id}', ArticelController::class . '@getArticle');
 
 Route::delete('/deleteArticlas/{id}', ArticelController::class . '@deleteArticlas');
+
+Route::delete('/deleteUser/{id}', UserController::class . '@deleteUser');
 
 Route::put('/updateArticlas/{id}', ArticelController::class . '@updateArticlas');
 
 Route::post('/register', UserController::class . '@register');
 
 Route::post('/login', UserController::class . '@login');
+
+Route::post('/attachRole', UserController::class . '@attachRole');
