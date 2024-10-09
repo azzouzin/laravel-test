@@ -20,6 +20,8 @@ Route::get('/UserArticals/{id}', ArticelController::class . '@getUserArticals');
 
 Route::get('/getArticlas/{id}', ArticelController::class . '@getArticle');
 
+Route::get('/getComments', UserController::class . '@getComments');
+
 Route::delete('/deleteArticlas/{id}', ArticelController::class . '@deleteArticlas');
 
 Route::delete('/deleteUser/{id}', UserController::class . '@deleteUser');
@@ -30,4 +32,4 @@ Route::post('/register', UserController::class . '@register');
 
 Route::post('/login', UserController::class . '@login');
 
-Route::post('/attachRole', UserController::class . '@attachRole');
+Route::post('/attachRole', UserController::class . '@comment');
