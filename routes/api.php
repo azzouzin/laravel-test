@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\articelController;
+use App\Http\Controllers\EmailController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,6 +22,8 @@ Route::get('/UserArticals/{id}', ArticelController::class . '@getUserArticals');
 Route::get('/getArticlas/{id}', ArticelController::class . '@getArticle');
 
 Route::get('/getComments', UserController::class . '@getComments');
+
+Route::get('/sendEmail', EmailController::class . '@sendEmail')->middleware('auth:sanctum');;
 
 Route::delete('/deleteArticlas/{id}', ArticelController::class . '@deleteArticlas');
 
